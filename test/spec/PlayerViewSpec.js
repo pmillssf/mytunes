@@ -32,18 +32,22 @@ describe('PlayerView', function() {
   });
 
   it('dequeues a song when finished playing & plays the next song', function() {
-    debugger;
 
     var firstSong = library.at(0);
     var secondSong = library.at(1);
     var thirdSong = library.at(2);
     var songQueue = appView.model.get('songQueue');
     // Set up a queue of three songs
+    console.log(appView.model.get('currentSong'), 0);
     songQueue.add(firstSong);
+    console.log(appView.model.get('currentSong'), 1);
     songQueue.add(secondSong);
+    console.log(appView.model.get('currentSong'), 2);
     songQueue.add(thirdSong);
+    console.log(appView.model.get('currentSong'), 3);
     // play the first song
     console.log(songQueue, 'SongQueue');
+    debugger;
     console.log(songQueue.playFirst());
     songQueue.playFirst();
     expect(appView.playerView.model).to.equal(firstSong);
