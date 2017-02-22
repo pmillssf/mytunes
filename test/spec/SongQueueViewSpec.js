@@ -23,6 +23,11 @@ describe('SongQueueView', function() {
     expect(SongQueueEntryView.prototype.render).to.have.been.called;
   });
 
+  it('it dequeues on click', function() {
+    // sinon.spy(SongQueueEntryView.prototype, 'event')
+    view = new SongQueueView({collection: fakeSongs});
+  });
+
   it('renders when add or remove event fires from the song queue collection', function() {
     sinon.spy(SongQueueView.prototype, 'render');
     view = new SongQueueView({collection: fakeSongs});
